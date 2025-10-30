@@ -67,6 +67,20 @@
             gap: 2.5rem;
         }
 
+        .burger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .burger span {
+            width: 25px;
+            height: 3px;
+            background: #f5f1ed;
+            transition: all 0.3s;
+        }
+
         nav a {
             color: #f5f1ed;
             text-decoration: none;
@@ -477,6 +491,251 @@
             border-top: 1px solid #c9a961;
             font-size: 0.9rem;
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .burger {
+                display: flex;
+            }
+
+            nav ul {
+                position: fixed;
+                right: -100%;
+                top: 60px;
+                flex-direction: column;
+                background: #5a3825;
+                width: 100%;
+                text-align: center;
+                transition: right 0.3s;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+                z-index: 99;
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            #accueil {
+                margin-top: 60px;
+            }
+
+            /* Réduction des tailles, layout FORCE en 2 colonnes */
+            .carousel-content {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem;
+                padding: 1.5rem 1rem;
+            }
+
+            .carousel-text h1 {
+                font-size: 2rem;
+            }
+
+            .carousel-text p {
+                font-size: 1rem;
+            }
+
+            .carousel-text .tagline {
+                font-size: 0.9rem;
+            }
+
+            .carousel-image {
+                height: 250px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h1 img {
+                height: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            .logo {
+                width: 100px;
+                height: 45px;
+            }
+
+            section {
+                padding: 80px 1rem 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr 1fr !important;
+                gap: 1rem;
+            }
+
+            .about-content p {
+                font-size: 0.85rem;
+            }
+
+            .book-showcase {
+                grid-template-columns: 1fr 2fr !important;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .placeholder-img {
+                height: 250px;
+            }
+
+            .book-cover {
+                height: 300px;
+            }
+
+            .book-info h3 {
+                font-size: 1.8rem;
+            }
+
+            .book-info p {
+                font-size: 0.9rem;
+            }
+
+            .collection-name {
+                font-size: 0.95rem;
+            }
+
+            .collection-intro {
+                font-size: 0.95rem;
+            }
+
+            .book-details {
+                padding: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .story-item {
+                font-size: 0.85rem;
+            }
+
+            .contact-content {
+                padding: 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            .social-icons img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .accueil-info h2 {
+                font-size: 1.5rem;
+            }
+
+            .accueil-info p {
+                font-size: 0.95rem;
+            }
+
+            /* Footer reste en 3 colonnes */
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .footer-section h3 {
+                font-size: 0.95rem;
+            }
+
+            .footer-logo img {
+                height: 35px;
+            }
+
+            .footer-social-icons img {
+                width: 22px;
+                height: 22px;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .carousel-text p {
+                font-size: 0.85rem;
+            }
+
+            .carousel-image {
+                height: 200px;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h1 img {
+                height: 1.4rem;
+            }
+
+            .logo {
+                width: 90px;
+                height: 40px;
+            }
+
+            nav ul {
+                top: 55px;
+            }
+
+            #accueil {
+                margin-top: 55px;
+            }
+
+            .about-content p {
+                font-size: 0.75rem;
+            }
+
+            .book-info h3 {
+                font-size: 1.5rem;
+            }
+
+            .book-info p {
+                font-size: 0.8rem;
+            }
+
+            .placeholder-img {
+                height: 200px;
+            }
+
+            .book-cover {
+                height: 250px;
+            }
+
+            .footer-content {
+                font-size: 0.7rem;
+            }
+
+            .footer-section h3 {
+                font-size: 0.85rem;
+            }
+
+            .footer-logo img {
+                height: 28px;
+            }
+
+            .footer-social-icons img {
+                width: 18px;
+                height: 18px;
+            }
+
+            .social-icons img {
+                width: 28px;
+                height: 28px;
+            }
+
+            .footer-bottom {
+                font-size: 0.7rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -488,6 +747,11 @@
             </a>
         </div>
         <nav>
+            <div class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul>
                 <li><a data-page="accueil">Accueil</a></li>
                 <li><a data-page="maison">La Maison</a></li>
@@ -511,7 +775,7 @@
                             <p class="tagline">Allier esthétisme et praticité</p>
                         </div>
                         <div class="carousel-image">
-                            <img src="Images/Accueil.png" alt="Collection Quator">
+                            <img src="Images/accueil.png" alt="Collection Quator">
                         </div>
                     </div>
                 </div>
@@ -676,11 +940,22 @@
                 targetSection.classList.add('active');
                 targetSection.style.display = 'block';
                 
+                // Fermer le menu mobile
+                const navMenu = document.querySelector('nav ul');
+                navMenu.classList.remove('active');
+                
                 // Scroll en haut
                 window.scrollTo(0, 0);
             });
         });
+
+        // Menu burger
+        const burger = document.querySelector('.burger');
+        const navMenu = document.querySelector('nav ul');
+
+        burger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
     </script>
 </body>
-
 </html>
