@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Éditions d'Hermès - Collection Quator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #3d2817;
+            background: #f5f1ed;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: #5a3825;
+            padding: 0.5rem 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 140px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding: 5px;
+        }
+
+        .logo a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: #f5f1ed;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #c9a961;
+        }
+
+        /* Main content */
+        main {
+            flex: 1;
+        }
+
+        /* Sections */
+        section {
+            display: none;
+            min-height: calc(100vh - 80px - 200px);
+            padding: 90px 2rem 3rem;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: #5a3825;
+            text-align: center;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        h1 img {
+            height: 3rem;
+            width: auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #5a3825;
+            font-weight: normal;
+        }
+
+        /* Accueil - Carrousel */
+        #accueil {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            margin-top: 70px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #8b4513 0%, #5a3825 100%);
+        }
+
+        .carousel-slide {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            max-width: 1200px;
+            padding: 0 2rem;
+            color: #f5f1ed;
+        }
+
+        .carousel-text h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            color: #c9a961;
+            text-align: left;
+        }
+
+        .carousel-text p {
+            font-size: 1.5rem;
+            color: #f5f1ed;
+            font-style: italic;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .carousel-text .tagline {
+            font-size: 1.2rem;
+            color: #c9a961;
+            margin-top: 2rem;
+        }
+
+        .carousel-image {
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            border-radius: 5%;
+        }
+
+        .carousel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+            border-radius: 5%;
+        }
+
+        .accueil-info {
+            padding: 3rem 2rem;
+            background: #ebe4dc;
+            text-align: center;
+            border-radius: 5%;
+        }
+
+        .accueil-info h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        .accueil-info p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* La Maison */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .placeholder-img {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid #5a3825;
+            border-radius: 5%;
+        }
+
+        .placeholder-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-content p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        /* Collection */
+        #collection {
+            background: #ebe4dc;
+        }
+
+        .collection-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 2rem auto 3rem;
+            font-style: italic;
+        }
+
+        .book-showcase {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            background: #f5f1ed;
+            padding: 3rem;
+            box-shadow: 0 4px 15px rgba(90, 56, 37, 0.2);
+            border: 2px solid #c9a961;
+            border-radius: 5%;
+        }
+
+        .book-cover {
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 3px solid #5a3825;
+            background: #000;
+            border-radius: 5%;
+        }
+
+        .book-cover video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5%;
+        }
+
+        .book-info h3 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            color: #5a3825;
+        }
+
+        .collection-name {
+            color: #8b4513;
+            font-style: italic;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .collection-name img {
+            height: 1.5rem;
+            width: auto;
+        }
+
+        .book-details {
+            background: #ebe4dc;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-left: 4px solid #c9a961;
+            border-radius: 5%;
+        }
+
+        .book-details p {
+            margin: 0.5rem 0;
+        }
+
+        .stories-list {
+            margin-top: 2rem;
+        }
+
+        .story-item {
+            margin: 1rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #c9a961;
+        }
+
+        .story-author {
+            font-weight: bold;
+            color: #5a3825;
+        }
+
+        .story-title {
+            font-style: italic;
+            color: #8b4513;
+        }
+
+        /* Contact */
+        .contact-content {
+            max-width: 700px;
+            margin: 3rem auto;
+            text-align: center;
+            background: #ebe4dc;
+            padding: 3rem;
+            border: 2px solid #c9a961;
+            border-radius: 5%;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin: 1.5rem 0;
+        }
+
+        .contact-info strong {
+            color: #5a3825;
+        }
+
+        .social-media {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #c9a961;
+        }
+
+        .social-media h3 {
+            color: #5a3825;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .social-icons a {
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Footer */
+        footer {
+            background: #5a3825;
+            color: #f5f1ed;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #c9a961;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-logo {
+            margin-top: 1rem;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .footer-social {
+            margin-top: 1.5rem;
+        }
+
+        .footer-social p {
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-icons a {
+            display: block;
+            transition: opacity 0.3s;
+        }
+
+        .footer-social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-social-icons img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .footer-section p {
+            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a {
+            color: #f5f1ed;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #c9a961;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #c9a961;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a data-page="accueil">
+                <img src="Images/logo.png" alt="Éditions d'Hermès">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a data-page="accueil">Accueil</a></li>
+                <li><a data-page="maison">La Maison</a></li>
+                <li><a data-page="collection">Collection</a></li>
+                <li><a data-page="contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Accueil -->
+        <section id="accueil" class="active">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <div class="carousel-content">
+                        <div class="carousel-text">
+                            <h1>Éditions d'Hermès</h1>
+                            <p>Maison d'édition de beaux livres</p>
+                            <p>Découvrez notre collection Quator : des recueils de nouvelles classiques dans un écrin raffiné</p>
+                            <p class="tagline">Allier esthétisme et praticité</p>
+                        </div>
+                        <div class="carousel-image">
+                            <img src="Images/accueil.png" alt="Collection Quator">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accueil-info">
+                <div class="container">
+                    <h2>Bienvenue aux Éditions d'Hermès</h2>
+                    <p>Nous créons des beaux livres reliés qui allient tradition et modernité. Notre collection Quator propose des recueils thématiques présentés dans des éditions soignées avec dorures à chaud et reliure en toile.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- La Maison -->
+        <section id="maison">
+            <div class="container">
+                <h1>La Maison d'Édition</h1>
+                <div class="about-content">
+                    <div class="placeholder-img">
+                    <img src="Images/maison.png" alt="Maison d'édition">
+                </div>
+                    <div>
+                        <h2>Notre philosophie</h2>
+                        <p>Les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture.</p>
+                        <p>Inspirés par l'essor des éditions reliées au jaspage et des beaux livres qui rencontrent un succès croissant, nous proposons des ouvrages au format hybride, ornés de dorures à chaud et conçus dans un esprit résolument classique.</p>
+                        <p>Notre collection Quator incarne cette vision : des recueils de nouvelles soigneusement sélectionnées, présentés dans un écrin digne des plus grandes bibliothèques.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection -->
+        <section id="collection">
+            <div class="container">
+                <h1>
+                Collection Quator
+                <img src="Images/Quator.png" alt="Logo Quator">
+            </h1>
+                <p class="collection-intro">
+                    La collection Quator propose des recueils thématiques réunissant quatre nouvelles d'auteurs classiques, dans un format élégant et raffiné.
+                </p>
+                
+                <div class="book-showcase">
+                    <div class="book-cover">
+                    <video autoplay loop muted playsinline>
+                        <source src="Images/Aventure.mp4" type="video/mp4">
+                        Votre navigateur ne supporte pas la vidéo.
+                    </video>
+                </div>
+                    <div class="book-info">
+                        <h3>Aventure</h3>
+                        <p class="collection-name">
+                        Collection Quator
+                        <img src="Images/Quator.png" alt="Logo Quator">
+                    </p>
+                        
+                        <div class="book-details">
+                            <p><strong>Format :</strong> 13,1 cm × 20,1 cm</p>
+                            <p><strong>Pages :</strong> 208</p>
+                            <p><strong>Reliure :</strong> Couverture en toile marron avec dorures à chaud</p>
+                            <p><strong>Papier :</strong> Bouffant crème 70g/m²</p>
+                            <p><strong>Prix :</strong> 18 €</p>
+                        </div>
+
+                        <p>Ce premier volume de la collection Quator réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
+                        
+                        <div class="stories-list">
+                            <div class="story-item">
+                                <div class="story-author">Jules Verne</div>
+                                <div class="story-title">Un drame au Mexique</div>
+                            </div>
+                            <div class="story-item">
+                                <div class="story-author">Jack London</div>
+                                <div class="story-title">Une odyssée du Grand Nord</div>
+                            </div>
+                            <div class="story-item">
+                                <div class="story-author">J.-H. Rosny aîné</div>
+                                <div class="story-title">Les Xipéhuz</div>
+                            </div>
+                            <div class="story-item">
+                                <div class="story-author">Alexandre Dumas</div>
+                                <div class="story-title">Le capitaine Marion</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <div class="container">
+                <h1>Contact</h1>
+                <div class="contact-content">
+                    <p>Pour toute demande d'information sur nos ouvrages ou notre maison d'édition, n'hésitez pas à nous contacter.</p>
+                    <div class="contact-info">
+                        <p><strong>Email :</strong> contact@editions-hermes.fr</p>
+                        <p><strong>Téléphone :</strong> 01 23 45 67 89</p>
+                        <p><strong>Adresse :</strong> 123 Rue de l'Édition<br>33000 Bordeaux, France</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Éditions d'Hermès</h3>
+                <p>Maison d'édition de beaux livres</p>
+                <p>Bordeaux, France</p>
+                <div class="footer-logo">
+                    <img src="Images/Logo2.png" alt="Éditions d'Hermès">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Navigation</h3>
+                <p><a data-page="accueil">Accueil</a></p>
+                <p><a data-page="maison">La Maison</a></p>
+                <p><a data-page="collection">Collection</a></p>
+                <p><a data-page="contact">Contact</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>contact@editions-hermes.fr</p>
+                <p>01 23 45 67 89</p>
+                <p>123 Rue de l'Édition, 33000 Bordeaux</p>
+                <div class="footer-social">
+                    <p>Suivez-nous</p>
+                    <div class="footer-social-icons">
+                        <a href="#" target="_blank"><img src="Images/Instagram.png" alt="Instagram"></a>
+                        <a href="#" target="_blank"><img src="Images/Facebook.png" alt="Facebook"></a>
+                        <a href="#" target="_blank"><img src="Images/Tiktok.png" alt="TikTok"></a>
+                        <a href="#" target="_blank"><img src="Images/Linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Éditions d'Hermès. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation entre les pages
+        const links = document.querySelectorAll('[data-page]');
+        const sections = document.querySelectorAll('main section');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                
+                // Cacher toutes les sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.display = 'none';
+                });
+                
+                // Afficher la section ciblée
+                const targetSection = document.getElementById(page);
+                targetSection.classList.add('active');
+                targetSection.style.display = 'block';
+                
+                // Scroll en haut
+                window.scrollTo(0, 0);
+            });
+        });
+    </script>
+</body>
+</html>
