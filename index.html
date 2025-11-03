@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<li><a data-page="catalogue">Catalogue</a></li><!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -144,7 +144,9 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            margin-top: 70px;
+            margin-top: 0;
+            padding-top: 70px;
+            background: linear-gradient(135deg, #8b4513 0%, #5a3825 100%);
         }
 
         .carousel {
@@ -153,6 +155,7 @@
             height: 600px;
             overflow: hidden;
             background: linear-gradient(135deg, #8b4513 0%, #5a3825 100%);
+            margin: 0;
         }
 
         .carousel-slide {
@@ -259,8 +262,115 @@
             text-align: justify;
         }
 
-        /* Collection */
+        /* Collection - Portail des collections */
         #collection {
+            background: #ebe4dc;
+        }
+
+        .collections-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 2rem auto 3rem;
+            font-size: 1.1rem;
+        }
+
+        .collections-container {
+            display: flex;
+            gap: 4rem;
+            justify-content: center;
+            align-items: stretch;
+            margin-top: 4rem;
+        }
+
+        .collection-box {
+            background: #f5f1ed;
+            border: 3px solid #c9a961;
+            border-radius: 5%;
+            padding: 3rem 2rem;
+            width: 400px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .collection-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(90, 56, 37, 0.3);
+        }
+
+        .collection-box.coming-soon {
+            background: #e8e8e8;
+            border-style: dashed;
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        .collection-box.coming-soon:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .collection-icon {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .collection-icon img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .collection-box.coming-soon .collection-icon {
+            background: #d0d0d0;
+            border-radius: 50%;
+            color: #888;
+            font-size: 3rem;
+        }
+
+        .collection-box h2 {
+            font-size: 2.5rem;
+            color: #5a3825;
+            margin-bottom: 1rem;
+        }
+
+        .collection-box.coming-soon h2 {
+            color: #888;
+        }
+
+        .collection-description {
+            font-style: italic;
+            color: #5a3825;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .collection-box.coming-soon .collection-description {
+            color: #888;
+        }
+
+        .collection-count {
+            background: #c9a961;
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: auto;
+        }
+
+        .collection-box.coming-soon .collection-count {
+            background: #aaa;
+        }
+
+        /* Aventure - Page détaillée du livre */
+        #aventure {
             background: #ebe4dc;
         }
 
@@ -376,6 +486,96 @@
 
         .contact-info strong {
             color: #5a3825;
+        }
+
+        /* Catalogue */
+        #catalogue {
+            background: #f5f1ed;
+        }
+
+        .catalogue-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .book-card {
+            background: #fff;
+            border: 2px solid #c9a961;
+            border-radius: 5%;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(90, 56, 37, 0.3);
+        }
+
+        .book-card.available:hover {
+            cursor: pointer;
+        }
+
+        .book-card.coming-soon {
+            background: #ebe4dc;
+            border-style: dashed;
+            cursor: default;
+        }
+
+        .book-card.coming-soon:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .book-card-image {
+            width: 100%;
+            height: 350px;
+            background: #c9a961;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5%;
+            overflow: hidden;
+        }
+
+        .book-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .book-card.coming-soon .book-card-image {
+            background: #d4d4d4;
+            color: #888;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        .book-card h3 {
+            font-size: 2rem;
+            color: #5a3825;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-card .book-collection {
+            color: #8b4513;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .book-card.coming-soon h3 {
+            color: #888;
+        }
+
+        .book-card.coming-soon .book-collection {
+            color: #aaa;
         }
 
         .social-media {
@@ -518,7 +718,8 @@
             }
 
             #accueil {
-                margin-top: 60px;
+                margin-top: 0;
+                padding-top: 60px;
             }
 
             /* Réduction des tailles, layout FORCE en 2 colonnes */
@@ -574,43 +775,19 @@
                 font-size: 0.85rem;
             }
 
-            .book-showcase {
-                grid-template-columns: 1fr 2fr !important;
-                gap: 1.5rem;
-                padding: 1.5rem;
-            }
-
             .placeholder-img {
                 height: 250px;
             }
 
+            /* Section Collection - responsive en 1 colonne */
+            .book-showcase {
+                grid-template-columns: 1fr !important;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
             .book-cover {
-                height: 300px;
-            }
-
-            .book-info h3 {
-                font-size: 1.8rem;
-            }
-
-            .book-info p {
-                font-size: 0.9rem;
-            }
-
-            .collection-name {
-                font-size: 0.95rem;
-            }
-
-            .collection-intro {
-                font-size: 0.95rem;
-            }
-
-            .book-details {
-                padding: 1rem;
-                font-size: 0.85rem;
-            }
-
-            .story-item {
-                font-size: 0.85rem;
+                height: 400px;
             }
 
             .contact-content {
@@ -687,19 +864,12 @@
             }
 
             #accueil {
-                margin-top: 55px;
+                margin-top: 0;
+                padding-top: 55px;
             }
 
             .about-content p {
                 font-size: 0.75rem;
-            }
-
-            .book-info h3 {
-                font-size: 1.5rem;
-            }
-
-            .book-info p {
-                font-size: 0.8rem;
             }
 
             .placeholder-img {
@@ -707,7 +877,7 @@
             }
 
             .book-cover {
-                height: 250px;
+                height: 350px;
             }
 
             .footer-content {
@@ -755,6 +925,7 @@
             <ul>
                 <li><a data-page="accueil">Accueil</a></li>
                 <li><a data-page="maison">La Maison</a></li>
+                <li><a data-page="catalogue">Catalogue</a></li>
                 <li><a data-page="collection">Collection</a></li>
                 <li><a data-page="contact">Contact</a></li>
             </ul>
@@ -806,8 +977,63 @@
             </div>
         </section>
 
-        <!-- Collection -->
+        <!-- Catalogue -->
+        <section id="catalogue">
+            <div class="container">
+                <h1>Catalogue</h1>
+                <div class="catalogue-grid">
+                    <div class="book-card available" data-book="aventure">
+                        <div class="book-card-image">
+                            <img src="Images/Catalogue.png" alt="Aventure">
+                        </div>
+                        <h3>Aventure</h3>
+                        <p class="book-collection">Collection Quator</p>
+                    </div>
+                    <div class="book-card coming-soon">
+                        <div class="book-card-image">
+                            À venir
+                        </div>
+                        <h3>Prochainement</h3>
+                        <p class="book-collection">Nouvelle collection</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Collection - Portail -->
         <section id="collection">
+            <div class="container">
+                <h1>Nos Collections</h1>
+                <p class="collections-intro">
+                    Les Éditions d'Hermès proposent des collections thématiques soigneusement élaborées. Chaque collection réunit des œuvres choisies pour leur qualité littéraire et présentées dans un écrin raffiné.
+                </p>
+                <div class="collections-container">
+                    <div class="collection-box" data-collection="aventure">
+                        <div class="collection-icon">
+                            <img src="Images/Quator.png" alt="Collection Quator">
+                        </div>
+                        <h2>Quator</h2>
+                        <p class="collection-description">
+                            Recueils de quatre nouvelles classiques autour d'une thématique commune
+                        </p>
+                        <span class="collection-count">1 titre disponible</span>
+                    </div>
+                    <div class="collection-box coming-soon">
+                        <div class="collection-icon">
+                            ?
+                        </div>
+                        <h2>À venir</h2>
+                        <p class="collection-description">
+                            Une nouvelle collection en préparation
+                        </p>
+                        <span class="collection-count">Prochainement</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aventure - Page détaillée du livre -->
+        <section id="aventure">
             <div class="container">
                 <h1>
                 Collection Quator
@@ -956,7 +1182,50 @@
         burger.addEventListener('click', () => {
             navMenu.classList.toggle('active');
         });
+
+        // Clic sur les cartes de livres dans le catalogue
+        const bookCards = document.querySelectorAll('.book-card.available');
+        bookCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const bookPage = card.getAttribute('data-book');
+                
+                // Cacher toutes les sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.display = 'none';
+                });
+                
+                // Afficher la page du livre
+                const targetSection = document.getElementById(bookPage);
+                targetSection.classList.add('active');
+                targetSection.style.display = 'block';
+                
+                // Scroll en haut
+                window.scrollTo(0, 0);
+            });
+        });
+
+        // Clic sur les collections
+        const collectionBoxes = document.querySelectorAll('.collection-box:not(.coming-soon)');
+        collectionBoxes.forEach(box => {
+            box.addEventListener('click', () => {
+                const collectionPage = box.getAttribute('data-collection');
+                
+                // Cacher toutes les sections
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    section.style.display = 'none';
+                });
+                
+                // Afficher la page de la collection
+                const targetSection = document.getElementById(collectionPage);
+                targetSection.classList.add('active');
+                targetSection.style.display = 'block';
+                
+                // Scroll en haut
+                window.scrollTo(0, 0);
+            });
+        });
     </script>
 </body>
 </html>
-
