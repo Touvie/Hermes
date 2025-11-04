@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Éditions d'Hermès - Collection Quator</title>
+    <title>Éditions d'Hermès - Collection Quatuor</title>
     <style>
         * {
             margin: 0;
@@ -23,56 +23,10 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            margin: 0;
-            padding: 0;
         }
 
         main {
             flex: 1;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Pattern de carrés - Style PDF */
-        .square-pattern {
-            position: absolute;
-            pointer-events: none;
-            z-index: -1;
-            transform: rotate(45deg);
-        }
-        
-        .square-pattern .square {
-            width: 45px;
-            height: 45px;
-            position: absolute;
-        }
-        
-        .pattern-corner-tl {
-            top: -120px;
-            left: -120px;
-            width: 250px;
-            height: 250px;
-        }
-        
-        .pattern-corner-tr {
-            top: -120px;
-            right: -120px;
-            width: 250px;
-            height: 250px;
-        }
-        
-        .pattern-corner-bl {
-            bottom: -120px;
-            left: -120px;
-            width: 250px;
-            height: 250px;
-        }
-        
-        .pattern-corner-br {
-            bottom: -120px;
-            right: -120px;
-            width: 250px;
-            height: 250px;
         }
 
         /* Header - Thème adaptatif */
@@ -159,9 +113,7 @@
         /* Sections */
         section {
             display: none;
-            min-height: calc(100vh - 80px - 200px);
-            padding: 90px 2rem 3rem;
-            position: relative;
+            padding: 80px 2rem 2rem;
         }
 
         section.active {
@@ -171,8 +123,6 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
         h1 {
@@ -207,11 +157,7 @@
             color: #2d4a3e;
         }
 
-        .theme-hermes .container {
-            color: #2d4a3e;
-        }
-
-        /* Thème Quator (Orange/Marron) */
+        /* Thème Quatuor (Orange/Marron) */
         .theme-quator {
             background: #f0ebe4;
         }
@@ -221,27 +167,18 @@
             color: #5a3825;
         }
 
-        .theme-quator .container {
-            color: #5a3825;
-        }
-
         /* Accueil */
         #accueil {
-            padding: 0;
+            padding: 70px 0 0;
             display: flex;
             flex-direction: column;
-            margin-top: 0;
-            padding-top: 70px;
             background: #e8ebe9;
         }
 
         .carousel {
-            position: relative;
             width: 100%;
             height: 600px;
-            overflow: hidden;
             background: #e8ebe9;
-            margin: 0;
         }
 
         .carousel-slide {
@@ -259,7 +196,6 @@
             align-items: center;
             max-width: 1200px;
             padding: 0 2rem;
-            color: #2d4a3e;
         }
 
         .carousel-text h1 {
@@ -288,9 +224,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: visible;
             border-radius: 5%;
-            position: relative;
         }
 
         .carousel-image img {
@@ -299,8 +233,6 @@
             object-fit: cover;
             box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
             border-radius: 5%;
-            position: relative;
-            z-index: 1;
         }
 
         .accueil-info {
@@ -337,15 +269,12 @@
             overflow: hidden;
             border: 3px solid #2d4a3e;
             border-radius: 5%;
-            position: relative;
         }
 
         .placeholder-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: relative;
-            z-index: 1;
         }
 
         .about-content p {
@@ -379,10 +308,6 @@
             box-shadow: 0 8px 20px rgba(45, 74, 62, 0.3);
         }
 
-        .book-card.available:hover {
-            cursor: pointer;
-        }
-
         .book-card.coming-soon {
             background: #e8ebe9;
             border-style: dashed;
@@ -396,13 +321,14 @@
 
         .book-card-image {
             width: 100%;
-            height: 350px;
+            height: 400px;
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 5%;
             overflow: hidden;
+            padding: 0.5rem;
         }
 
         .book-card-image img {
@@ -455,7 +381,7 @@
         }
 
         .collection-box {
-            background: #f5f1ed;
+            background: #f0ebe4;
             border: 3px solid #c9a961;
             border-radius: 5%;
             padding: 3rem 2rem;
@@ -486,8 +412,8 @@
         }
 
         .collection-icon {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             margin-bottom: 2rem;
             display: flex;
             align-items: center;
@@ -505,6 +431,8 @@
             border-radius: 50%;
             color: #888;
             font-size: 3rem;
+            width: 200px;
+            height: 200px;
         }
 
         .collection-box h2 {
@@ -570,7 +498,6 @@
             border: 3px solid #5a3825;
             background: #000;
             border-radius: 5%;
-            position: relative;
         }
 
         .book-cover video {
@@ -578,8 +505,6 @@
             height: 100%;
             object-fit: cover;
             border-radius: 5%;
-            position: relative;
-            z-index: 1;
         }
 
         .book-info h3 {
@@ -823,22 +748,27 @@
             }
 
             #accueil {
-                margin-top: 0;
                 padding-top: 60px;
             }
 
+            section {
+                padding: 70px 1rem 1rem;
+            }
+
             .carousel-content {
-                grid-template-columns: 1fr 1fr !important;
-                gap: 1rem;
+                grid-template-columns: 1fr;
+                gap: 2rem;
                 padding: 1.5rem 1rem;
             }
 
             .carousel-text h1 {
                 font-size: 2rem;
+                text-align: center;
             }
 
             .carousel-text p {
                 font-size: 1rem;
+                text-align: center;
             }
 
             .carousel-text .tagline {
@@ -866,12 +796,8 @@
                 height: 45px;
             }
 
-            section {
-                padding: 80px 1rem 2rem;
-            }
-
             .about-content {
-                grid-template-columns: 1fr 1fr !important;
+                grid-template-columns: 1fr;
                 gap: 1rem;
             }
 
@@ -883,8 +809,22 @@
                 height: 250px;
             }
 
+            .catalogue-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .collections-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .collection-box {
+                width: 100%;
+            }
+
             .book-showcase {
-                grid-template-columns: 1fr !important;
+                grid-template-columns: 1fr;
                 gap: 2rem;
                 padding: 2rem;
             }
@@ -912,7 +852,7 @@
             }
 
             .footer-content {
-                grid-template-columns: repeat(3, 1fr) !important;
+                grid-template-columns: repeat(3, 1fr);
                 gap: 0.8rem;
                 font-size: 0.8rem;
             }
@@ -966,7 +906,6 @@
             }
 
             #accueil {
-                margin-top: 0;
                 padding-top: 55px;
             }
 
@@ -1038,20 +977,17 @@
     <main>
         <!-- Accueil -->
         <section id="accueil" class="active">
-            <canvas id="pattern-accueil" class="square-pattern"></canvas>
             <div class="carousel">
                 <div class="carousel-slide">
                     <div class="carousel-content">
                         <div class="carousel-text">
                             <h1>Éditions d'Hermès</h1>
                             <p>Maison d'édition de beaux livres</p>
-                            <p>Découvrez notre collection Quator : des recueils de nouvelles classiques dans un écrin raffiné</p>
+                            <p>Découvrez notre collection Quatuor : des recueils de nouvelles classiques dans un écrin raffiné</p>
                             <p class="tagline">Allier esthétisme et praticité</p>
                         </div>
                         <div class="carousel-image">
-                            <div class="square-pattern pattern-corner-tl"></div>
-                            <div class="square-pattern pattern-corner-br"></div>
-                            <img src="Images/Accueil.png" alt="Collection Quator">
+                            <img src="Images/Accueil.png" alt="Collection Quatuor">
                         </div>
                     </div>
                 </div>
@@ -1059,27 +995,24 @@
             <div class="accueil-info">
                 <div class="container">
                     <h2>Bienvenue aux Éditions d'Hermès</h2>
-                    <p>Nous créons des beaux livres reliés qui allient tradition et modernité. Notre collection Quator propose des recueils thématiques présentés dans des éditions soignées avec dorures à chaud et reliure en toile.</p>
+                    <p>Nous créons des beaux livres reliés qui allient tradition et modernité. Notre collection Quatuor propose des recueils thématiques présentés dans des éditions soignées avec dorures à chaud et reliure en toile.</p>
                 </div>
             </div>
         </section>
 
         <!-- La Maison -->
         <section id="maison" class="theme-hermes">
-            <canvas id="pattern-maison" class="square-pattern"></canvas>
             <div class="container">
                 <h1>La Maison d'Édition</h1>
                 <div class="about-content">
                     <div class="placeholder-img">
-                        <div class="square-pattern pattern-corner-tr"></div>
-                        <div class="square-pattern pattern-corner-bl"></div>
                         <img src="Images/maison.png" alt="Maison d'édition">
                     </div>
                     <div>
                         <h2>Notre philosophie</h2>
                         <p>Les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture.</p>
                         <p>Inspirés par l'essor des éditions reliées au jaspage et des beaux livres qui rencontrent un succès croissant, nous proposons des ouvrages au format hybride, ornés de dorures à chaud et conçus dans un esprit résolument classique.</p>
-                        <p>Notre collection Quator incarne cette vision : des recueils de nouvelles soigneusement sélectionnées, présentés dans un écrin digne des plus grandes bibliothèques.</p>
+                        <p>Notre collection Quatuor incarne cette vision : des recueils de nouvelles soigneusement sélectionnées, présentés dans un écrin digne des plus grandes bibliothèques.</p>
                     </div>
                 </div>
             </div>
@@ -1087,7 +1020,6 @@
 
         <!-- Catalogue -->
         <section id="catalogue" class="theme-hermes">
-            <canvas id="pattern-catalogue" class="square-pattern"></canvas>
             <div class="container">
                 <h1>Catalogue</h1>
                 <div class="catalogue-grid">
@@ -1096,7 +1028,7 @@
                             <img src="Images/Catalogue.png" alt="Aventure">
                         </div>
                         <h3>Aventure</h3>
-                        <p class="book-collection">Collection Quator</p>
+                        <p class="book-collection">Collection Quatuor</p>
                     </div>
                     <div class="book-card coming-soon">
                         <div class="book-card-image">
@@ -1110,19 +1042,18 @@
         </section>
 
         <!-- Collection - Portail -->
-        <section id="collection" class="theme-quator">
-            <canvas id="pattern-collection" class="square-pattern"></canvas>
+        <section id="collection" class="theme-hermes">
             <div class="container">
                 <h1>Nos Collections</h1>
                 <p class="collections-intro">
                     Les Éditions d'Hermès proposent des collections thématiques soigneusement élaborées. Chaque collection réunit des œuvres choisies pour leur qualité littéraire et présentées dans un écrin raffiné.
                 </p>
                 <div class="collections-container">
-                    <div class="collection-box" data-collection="aventure">
+                    <div class="collection-box quatuor" data-collection="aventure">
                         <div class="collection-icon">
-                            <img src="Images/Quator.png" alt="Collection Quator">
+                            <img src="Images/Quatuor.png" alt="Collection Quatuor">
                         </div>
-                        <h2>Quator</h2>
+                        <h2>Quatuor</h2>
                         <p class="collection-description">
                             Recueils de quatre nouvelles classiques autour d'une thématique commune
                         </p>
@@ -1144,20 +1075,17 @@
 
         <!-- Aventure - Page détaillée du livre -->
         <section id="aventure" class="theme-quator">
-            <canvas id="pattern-aventure" class="square-pattern"></canvas>
             <div class="container">
                 <h1>
-                    Collection Quator
-                    <img src="Images/LogoQuator.png" alt="Logo Quator">
+                    Collection Quatuor
+                    <img src="Images/LogoQuatuor.png" alt="Logo Quatuor">
                 </h1>
                 <p class="collection-intro">
-                    La collection Quator propose des recueils thématiques réunissant quatre nouvelles d'auteurs classiques, dans un format élégant et raffiné.
+                    La collection Quatuor propose des recueils thématiques réunissant quatre nouvelles d'auteurs classiques, dans un format élégant et raffiné.
                 </p>
                 
                 <div class="book-showcase">
                     <div class="book-cover">
-                        <div class="square-pattern pattern-corner-tl"></div>
-                        <div class="square-pattern pattern-corner-br"></div>
                         <video autoplay loop muted playsinline>
                             <source src="Images/Aventure.mp4" type="video/mp4">
                             Votre navigateur ne supporte pas la vidéo.
@@ -1166,8 +1094,8 @@
                     <div class="book-info">
                         <h3>Aventure</h3>
                         <p class="collection-name">
-                            Collection Quator
-                            <img src="Images/LogoQuator.png" alt="Logo Quator">
+                            Collection Quatuor
+                            <img src="Images/LogoQuatuor.png" alt="Logo Quatuor">
                         </p>
                         
                         <div class="book-details">
@@ -1178,7 +1106,7 @@
                             <p><strong>Prix :</strong> 18 €</p>
                         </div>
 
-                        <p>Ce premier volume de la collection Quator réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
+                        <p>Ce premier volume de la collection Quatuor réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
                         
                         <div class="stories-list">
                             <div class="story-item">
@@ -1205,7 +1133,6 @@
 
         <!-- Contact -->
         <section id="contact" class="theme-hermes">
-            <canvas id="pattern-contact" class="square-pattern"></canvas>
             <div class="container">
                 <h1>Contact</h1>
                 <div class="contact-content">
@@ -1270,65 +1197,6 @@
     </footer>
 
     <script>
-        // Fonction pour créer le pattern de carrés en forme de losange - Style PDF
-        function createSquarePattern(container, colors) {
-            if (!container) return;
-            
-            container.innerHTML = ''; // Vider le container
-            
-            // Pattern en forme de losange comme dans le schéma
-            // OOXOO
-            // OXXXO
-            // XXXXX
-            // OXXXO
-            // OOXOO
-            
-            const pattern = [
-                [0, 0, 1, 0, 0],
-                [0, 1, 1, 1, 0],
-                [1, 1, 1, 1, 1],
-                [0, 1, 1, 1, 0],
-                [0, 0, 1, 0, 0]
-            ];
-            
-            let colorIndex = 0;
-            for (let row = 0; row < pattern.length; row++) {
-                for (let col = 0; col < pattern[row].length; col++) {
-                    const square = document.createElement('div');
-                    square.className = 'square';
-                    
-                    if (pattern[row][col] === 1) {
-                        square.style.backgroundColor = colors[colorIndex % colors.length];
-                        colorIndex++;
-                    } else {
-                        square.classList.add('hidden');
-                    }
-                    
-                    container.appendChild(square);
-                }
-            }
-        }
-
-        // Couleurs pour les patterns
-        const colorsHermes = ['#2d4a3e', '#4a6b5a', '#5a7a68', '#7a9a88'];
-        const colorsQuator = ['#8b4513', '#5a3825', '#c9a961', '#a0826d'];
-
-        // Créer les patterns au chargement
-        window.addEventListener('load', () => {
-            // Patterns Hermès (vert)
-            document.querySelectorAll('#accueil .square-pattern').forEach(pattern => {
-                createSquarePattern(pattern, colorsHermes);
-            });
-            document.querySelectorAll('#maison .square-pattern').forEach(pattern => {
-                createSquarePattern(pattern, colorsHermes);
-            });
-            
-            // Patterns Quator (marron)
-            document.querySelectorAll('#aventure .square-pattern').forEach(pattern => {
-                createSquarePattern(pattern, colorsQuator);
-            });
-        });
-
         // Navigation entre les pages
         const links = document.querySelectorAll('[data-page]');
         const sections = document.querySelectorAll('main section');
@@ -1337,7 +1205,7 @@
 
         // Fonction pour changer le thème du header et footer
         function updateTheme(pageId) {
-            if (pageId === 'collection' || pageId === 'aventure') {
+            if (pageId === 'aventure') {
                 header.className = 'theme-quator';
                 footer.className = 'theme-quator';
             } else {
