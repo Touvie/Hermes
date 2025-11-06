@@ -53,8 +53,8 @@
         }
 
         .logo {
-            width: 140px;
-            height: 60px;
+            width: 210px;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -124,10 +124,10 @@
         /* Images décoratives coins */
         .corner-decoration {
             position: absolute;
-            width: 360px;
-            height: 360px;
+            width: 300px;
+            height: 300px;
             object-fit: contain;
-            opacity: 0.4;
+            opacity: 0.6;
             pointer-events: none;
             z-index: 1;
         }
@@ -619,6 +619,40 @@
             color: #2d4a3e;
         }
 
+        .serendip-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid #5a7a68;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .serendip-info a {
+            transition: opacity 0.3s;
+        }
+
+        .serendip-info a:hover {
+            opacity: 0.7;
+        }
+
+        .serendip-info img {
+            height: 50px;
+            width: auto;
+        }
+
+        .serendip-info p {
+            margin: 0;
+            text-align: left;
+        }
+
+        .serendip-info a.serendip-text {
+            color: #2d4a3e;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
         .social-media {
             margin-top: 2rem;
             padding-top: 2rem;
@@ -709,7 +743,7 @@
         }
 
         .footer-logo img {
-            height: 60px;
+            height: 90px;
             width: auto;
         }
 
@@ -1012,6 +1046,8 @@
     <main>
         <!-- Accueil -->
         <section id="accueil" class="active">
+            <img src="Images/Square.png" class="corner-decoration corner-top-left" alt="" style="top: 70px;">
+            <img src="Images/Square.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="carousel">
                 <div class="carousel-slide">
                     <div class="carousel-content">
@@ -1192,7 +1228,16 @@
                         <p><strong>Email :</strong> contact@editions-hermes.fr</p>
                         <p><strong>Téléphone :</strong> 01 23 45 67 89</p>
                         <p><strong>Adresse :</strong> 123 Rue de l'Édition<br>33000 Bordeaux, France</p>
-                        <p style="margin-top: 2rem;"><strong>Diffusion & Distribution :</strong><br>Serendip Livres (France, Belgique, Suisse, Luxembourg)</p>
+                    </div>
+                    <div class="serendip-info">
+                        <a href="https://serendip-livres.fr/" target="_blank">
+                            <img src="Images/Serendip.png" alt="Serendip Livres">
+                        </a>
+                        <div>
+                            <p><strong>Diffusion & Distribution :</strong></p>
+                            <p><a href="https://serendip-livres.fr/" target="_blank" class="serendip-text">Serendip Livres</a></p>
+                            <p style="font-size: 0.9rem;">(France, Belgique, Suisse, Luxembourg)</p>
+                        </div>
                     </div>
                     <div class="social-media">
                         <h3>Suivez-nous</h3>
