@@ -114,15 +114,39 @@
         section {
             display: none;
             padding: 80px 2rem 2rem;
+            position: relative;
         }
 
         section.active {
             display: block;
         }
 
+        /* Images décoratives coins */
+        .corner-decoration {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            object-fit: contain;
+            opacity: 0.15;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .corner-top-left {
+            top: 80px;
+            left: 0;
+        }
+
+        .corner-bottom-right {
+            bottom: 0;
+            right: 0;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         h1 {
@@ -965,7 +989,7 @@
     <header id="main-header" class="theme-hermes">
         <div class="logo">
             <a data-page="accueil">
-                <img src="Images/logo.svg" alt="Éditions d'Hermès">
+                <img src="Images/Logo.png" alt="Éditions d'Hermès">
             </a>
         </div>
         <nav>
@@ -1013,6 +1037,8 @@
 
         <!-- La Maison -->
         <section id="maison" class="theme-hermes">
+            <img src="Images/Square.png" class="corner-decoration corner-top-left" alt="">
+            <img src="Images/Square.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="container">
                 <h1>La Maison d'Édition</h1>
                 <div class="about-content">
@@ -1031,6 +1057,8 @@
 
         <!-- Catalogue -->
         <section id="catalogue" class="theme-hermes">
+            <img src="Images/Square.png" class="corner-decoration corner-top-left" alt="">
+            <img src="Images/Square.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="container">
                 <h1>Catalogue</h1>
                 <div class="catalogue-grid">
@@ -1054,6 +1082,8 @@
 
         <!-- Collection - Portail -->
         <section id="collection" class="theme-hermes">
+            <img src="Images/Square.png" class="corner-decoration corner-top-left" alt="">
+            <img src="Images/Square.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="container">
                 <h1>Nos Collections</h1>
                 <p class="collections-intro">
@@ -1086,6 +1116,8 @@
 
         <!-- Aventure - Page détaillée du livre -->
         <section id="aventure" class="theme-quator">
+            <img src="Images/Square2.png" class="corner-decoration corner-top-left" alt="">
+            <img src="Images/Square2.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="container">
                 <h1>
                     Collection Quatuor
@@ -1114,7 +1146,7 @@
                             <p><strong>Pages :</strong> 208</p>
                             <p><strong>Reliure :</strong> Couverture en toile marron avec dorures à chaud</p>
                             <p><strong>Papier :</strong> Bouffant crème 70g/m²</p>
-                            <p><strong>Prix :</strong> 18 €</p>
+                            <p><strong>Prix :</strong> 19€50</p>
                         </div>
 
                         <p>Ce premier volume de la collection Quatuor réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
@@ -1148,6 +1180,8 @@
 
         <!-- Contact -->
         <section id="contact" class="theme-hermes">
+            <img src="Images/Square.png" class="corner-decoration corner-top-left" alt="">
+            <img src="Images/Square.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="container">
                 <h1>Contact</h1>
                 <div class="contact-content">
