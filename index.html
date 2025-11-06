@@ -54,12 +54,11 @@
 
         .logo {
             width: 210px;
-            height: 90px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 2.5px;
         }
 
         .logo a {
@@ -72,8 +71,8 @@
         }
 
         .logo img {
-            width: 100%;
-            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
         }
 
@@ -146,7 +145,7 @@
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         h1 {
@@ -201,13 +200,13 @@
         }
 
         #accueil .corner-decoration {
-            z-index: 0;
+            z-index: 1;
         }
 
         #accueil .carousel,
         #accueil .accueil-info {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
 
         .carousel {
