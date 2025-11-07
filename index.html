@@ -288,21 +288,20 @@
 
         /* La Maison */
         .about-content {
-            display: block;
             margin-top: 2rem;
         }
 
         .maison-header {
             display: grid;
-            grid-template-columns: 400px 1fr;
+            grid-template-columns: 350px 1fr;
             gap: 3rem;
             align-items: start;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .placeholder-img {
             width: 100%;
-            height: 400px;
+            height: 350px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -320,13 +319,15 @@
             margin-bottom: 1.2rem;
             text-align: justify;
             font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         .about-content h2 {
             margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
         }
 
-        .about-content h2:first-of-type {
+        .maison-header h2 {
             margin-top: 0;
         }
 
@@ -588,6 +589,47 @@
             margin: 0.5rem 0;
         }
 
+        .buy-button {
+            background: linear-gradient(135deg, #c9a961 0%, #b8934d 100%);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+            margin: 1rem 0;
+            display: inline-block;
+            text-decoration: none;
+            min-width: 210px;
+            text-align: center;
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, #b8934d 0%, #a67f3d 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+        }
+
+        .buy-button:active {
+            transform: translateY(0);
+        }
+
+        .buy-button.error {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            animation: glitch 0.3s ease;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-5px); }
+            40% { transform: translateX(5px); }
+            60% { transform: translateX(-3px); }
+            80% { transform: translateX(3px); }
+        }
+
         .stories-list {
             margin-top: 2rem;
         }
@@ -617,32 +659,6 @@
             font-size: 0.95rem;
             line-height: 1.5;
             text-align: justify;
-        }
-
-        .buy-button {
-            background: linear-gradient(135deg, #c9a961 0%, #b8934d 100%);
-            color: #fff;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
-            margin-top: 1.5rem;
-            display: inline-block;
-            text-decoration: none;
-        }
-
-        .buy-button:hover {
-            background: linear-gradient(135deg, #b8934d 0%, #a67f3d 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
-        }
-
-        .buy-button:active {
-            transform: translateY(0);
         }
 
         /* Contact */
@@ -915,18 +931,13 @@
                 height: 45px;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
             .maison-header {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
 
             .about-content p {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
             }
 
             .placeholder-img {
@@ -1034,7 +1045,7 @@
             }
 
             .about-content p {
-                font-size: 0.75rem;
+                font-size: 0.8rem;
             }
 
             .placeholder-img {
@@ -1141,16 +1152,14 @@
                         <div>
                             <h2>Notre histoire</h2>
                             <p>Jeunes professionnels fraîchement diplômés de masters d'édition et d'univers journalistiques, nous avons choisi Bordeaux pour lancer notre activité. Après avoir étudié dans cette ville, nous avons réfléchi à ce que nous pourrions offrir au paysage éditorial bordelais. Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques.</p>
-                            <p>Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture. Nous proposons des ouvrages au format hybride, ornés d'effet dorure et conçus dans un esprit résolument classique.</p>
                         </div>
                     </div>
-                    <div>
-                        <h2>Notre philosophie</h2>
-                        <p>Inspirés par le dieu messager Hermès, notre maison incarne l'esprit de découverte et de transmission. Nos couleurs, un vert profond rappelant la nature et l'inconnu, et un vert plus clair incarnant la sérénité et la réflexion, forment une palette élégante dépeignant la découverte, le respect du monde et la dimension intérieure du voyage.</p>
-                        <p>Notre collection Quatuor illustre cette vision : des recueils de quatre nouvelles d'auteurs classiques, choisies pour explorer un même thème sous différents angles et à travers diverses époques. Un format semi-poche d'environ 200 pages, une reliure en toile sophistiquée, et une fabrication soignée qui donne envie de commencer sa bibliothèque du voyageur.</p>
-                        <h2>Diffusion et distribution</h2>
-                        <p>Nos ouvrages sont diffusés et distribués par <strong>Serendip Livres</strong> dans toute la francophonie (France, Belgique, Suisse, Luxembourg), garantissant ainsi une large accessibilité à nos publications.</p>
-                    </div>
+                    <p>Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture. Nous proposons des ouvrages au format hybride, ornés d'effet dorure et conçus dans un esprit résolument classique.</p>
+                    <h2>Notre philosophie</h2>
+                    <p>Inspirés par le dieu messager Hermès, notre maison incarne l'esprit de découverte et de transmission. Nos couleurs, un vert profond rappelant la nature et l'inconnu, et un vert plus clair incarnant la sérénité et la réflexion, forment une palette élégante dépeignant la découverte, le respect du monde et la dimension intérieure du voyage.</p>
+                    <p>Notre collection Quatuor illustre cette vision : des recueils de quatre nouvelles d'auteurs classiques, choisies pour explorer un même thème sous différents angles et à travers diverses époques. Un format semi-poche d'environ 200 pages, une reliure en toile sophistiquée, et une fabrication soignée qui donne envie de commencer sa bibliothèque du voyageur.</p>
+                    <h2>Diffusion et distribution</h2>
+                    <p>Nos ouvrages sont diffusés et distribués par <strong>Serendip Livres</strong> dans toute la francophonie (France, Belgique, Suisse, Luxembourg), garantissant ainsi une large accessibilité à nos publications.</p>
                 </div>
             </div>
         </section>
@@ -1249,9 +1258,9 @@
                             <p><strong>Prix :</strong> 19.50 €</p>
                         </div>
 
-                        <button class="buy-button">Acheter le livre</button>
+                        <button class="buy-button" id="buyBtn">Acheter le livre</button>
 
-                        <p style="margin-top: 2rem;">Ce premier volume de la collection Quatuor réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
+                        <p style="margin-top: 1.5rem;">Ce premier volume de la collection Quatuor réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
                         
                         <div class="stories-list">
                             <div class="story-item">
@@ -1462,14 +1471,18 @@
         });
 
         // Easter egg pour le bouton "Acheter le livre"
-        const buyButton = document.querySelector('.buy-button');
+        const buyButton = document.getElementById('buyBtn');
         if (buyButton) {
             buyButton.addEventListener('click', () => {
                 const originalText = buyButton.textContent;
+                
+                // Animation de glitch
+                buyButton.classList.add('error');
                 buyButton.textContent = '€rror 418';
                 buyButton.style.cursor = 'not-allowed';
                 
                 setTimeout(() => {
+                    buyButton.classList.remove('error');
                     buyButton.textContent = originalText;
                     buyButton.style.cursor = 'pointer';
                 }, 5000);
