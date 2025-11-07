@@ -288,11 +288,16 @@
 
         /* La Maison */
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+            display: block;
             margin-top: 2rem;
+        }
+
+        .maison-header {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 3rem;
+            align-items: start;
+            margin-bottom: 3rem;
         }
 
         .placeholder-img {
@@ -302,19 +307,27 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            border: 3px solid #2d4a3e;
             border-radius: 5%;
         }
 
         .placeholder-img img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .about-content p {
             margin-bottom: 1.2rem;
             text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        .about-content h2 {
+            margin-top: 2.5rem;
+        }
+
+        .about-content h2:first-of-type {
+            margin-top: 0;
         }
 
         /* Catalogue */
@@ -609,15 +622,15 @@
         .buy-button {
             background: linear-gradient(135deg, #c9a961 0%, #b8934d 100%);
             color: #fff;
-            padding: 1rem 2.5rem;
+            padding: 0.8rem 2rem;
             border: none;
-            border-radius: 50px;
+            border-radius: 8px;
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s;
             box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             display: inline-block;
             text-decoration: none;
         }
@@ -907,6 +920,11 @@
                 gap: 1rem;
             }
 
+            .maison-header {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
             .about-content p {
                 font-size: 0.85rem;
             }
@@ -1116,17 +1134,21 @@
             <div class="container">
                 <h1>Notre Maison</h1>
                 <div class="about-content">
-                    <div class="placeholder-img">
-                        <img src="Images/Logo2.png" alt="Maison d'édition">
+                    <div class="maison-header">
+                        <div class="placeholder-img">
+                            <img src="Images/Logo2.png" alt="Maison d'édition">
+                        </div>
+                        <div>
+                            <h2>Notre histoire</h2>
+                            <p>Jeunes professionnels fraîchement diplômés de masters d'édition et d'univers journalistiques, nous avons choisi Bordeaux pour lancer notre activité. Après avoir étudié dans cette ville, nous avons réfléchi à ce que nous pourrions offrir au paysage éditorial bordelais. Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques.</p>
+                            <p>Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture. Nous proposons des ouvrages au format hybride, ornés d'effet dorure et conçus dans un esprit résolument classique.</p>
+                        </div>
                     </div>
                     <div>
-                        <h2>Notre histoire</h2>
-                        <p>Jeunes professionnels fraîchement diplômés de masters d'édition et d'univers journalistiques, nous avons choisi Bordeaux pour lancer notre activité. Après avoir étudié dans cette ville, nous avons réfléchi à ce que nous pourrions offrir au paysage éditorial bordelais. Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques.</p>
-                        <p>Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture. Nous proposons des ouvrages au format hybride, ornés d'effet dorure et conçus dans un esprit résolument classique.</p>
-                        <h2 style="margin-top: 2rem;">Notre philosophie</h2>
+                        <h2>Notre philosophie</h2>
                         <p>Inspirés par le dieu messager Hermès, notre maison incarne l'esprit de découverte et de transmission. Nos couleurs, un vert profond rappelant la nature et l'inconnu, et un vert plus clair incarnant la sérénité et la réflexion, forment une palette élégante dépeignant la découverte, le respect du monde et la dimension intérieure du voyage.</p>
                         <p>Notre collection Quatuor illustre cette vision : des recueils de quatre nouvelles d'auteurs classiques, choisies pour explorer un même thème sous différents angles et à travers diverses époques. Un format semi-poche d'environ 200 pages, une reliure en toile sophistiquée, et une fabrication soignée qui donne envie de commencer sa bibliothèque du voyageur.</p>
-                        <h2 style="margin-top: 2rem;">Diffusion et distribution</h2>
+                        <h2>Diffusion et distribution</h2>
                         <p>Nos ouvrages sont diffusés et distribués par <strong>Serendip Livres</strong> dans toute la francophonie (France, Belgique, Suisse, Luxembourg), garantissant ainsi une large accessibilité à nos publications.</p>
                     </div>
                 </div>
@@ -1438,6 +1460,21 @@
                 window.scrollTo(0, 0);
             });
         });
+
+        // Easter egg pour le bouton "Acheter le livre"
+        const buyButton = document.querySelector('.buy-button');
+        if (buyButton) {
+            buyButton.addEventListener('click', () => {
+                const originalText = buyButton.textContent;
+                buyButton.textContent = '€rror 418';
+                buyButton.style.cursor = 'not-allowed';
+                
+                setTimeout(() => {
+                    buyButton.textContent = originalText;
+                    buyButton.style.cursor = 'pointer';
+                }, 5000);
+            });
+        }
     </script>
 </body>
 </html>
