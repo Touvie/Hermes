@@ -213,7 +213,7 @@
         .carousel {
             width: 100%;
             height: 600px;
-            background: #e8ebe9;
+            background: transparent;
         }
 
         .carousel-slide {
@@ -430,8 +430,8 @@
         }
 
         .collection-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(90, 56, 37, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(90, 56, 37, 0.3);
         }
 
         .collection-box.coming-soon {
@@ -604,6 +604,32 @@
             font-size: 0.95rem;
             line-height: 1.5;
             text-align: justify;
+        }
+
+        .buy-button {
+            background: linear-gradient(135deg, #c9a961 0%, #b8934d 100%);
+            color: #fff;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+            margin-top: 2rem;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .buy-button:hover {
+            background: linear-gradient(135deg, #b8934d 0%, #a67f3d 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(201, 169, 97, 0.4);
+        }
+
+        .buy-button:active {
+            transform: translateY(0);
         }
 
         /* Contact */
@@ -1077,7 +1103,8 @@
             <div class="accueil-info">
                 <div class="container">
                     <h2>Bienvenue aux Éditions d'Hermès</h2>
-                    <p>Nous créons des beaux livres reliés qui allient tradition et modernité. Notre collection Quatuor propose des recueils thématiques présentés dans des éditions soignées avec dorures à chaud et reliure en toile.</p>
+                    <p>Jeunes éditeurs bordelais passionnés, nous invitons à la découverte et au voyage à travers les mots. Notre collection Quatuor réunit quatre nouvelles d'auteurs classiques autour d'une thématique commune, présentées dans un format élégant et raffiné : reliure en toile, effet dorure et papier crème. Chaque recueil explore un thème sous plusieurs angles et à travers diverses époques.</p>
+                    <p style="margin-top: 1.5rem; font-weight: bold; font-size: 1.2rem;"><a data-page="aventure" style="color: #f5f1ed; text-decoration: underline; cursor: pointer;">Découvrez dès maintenant notre premier livre !</a></p>
                 </div>
             </div>
         </section>
@@ -1087,16 +1114,18 @@
             <img src="Images/Square.png" class="corner-decoration corner-top-left" alt="">
             <img src="Images/Square.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="container">
-                <h1>La Maison d'Édition</h1>
+                <h1>Notre Maison</h1>
                 <div class="about-content">
                     <div class="placeholder-img">
-                        <img src="Images/maison.png" alt="Maison d'édition">
+                        <img src="Images/Logo2.png" alt="Maison d'édition">
                     </div>
                     <div>
-                        <h2>Notre philosophie</h2>
-                        <p>Les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture.</p>
-                        <p>Inspirés par l'essor des éditions reliées au jaspage et des beaux livres qui rencontrent un succès croissant, nous proposons des ouvrages au format hybride, ornés de dorures à chaud et conçus dans un esprit résolument classique.</p>
-                        <p>Notre collection Quatuor incarne cette vision : des recueils de nouvelles soigneusement sélectionnées, présentés dans un écrin digne des plus grandes bibliothèques.</p>
+                        <h2>Notre histoire</h2>
+                        <p>Jeunes professionnels fraîchement diplômés de masters d'édition et d'univers journalistiques, nous avons choisi Bordeaux pour lancer notre activité. Après avoir étudié dans cette ville, nous avons réfléchi à ce que nous pourrions offrir au paysage éditorial bordelais. Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques.</p>
+                        <p>Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture. Nous proposons des ouvrages au format hybride, ornés d'effet dorure et conçus dans un esprit résolument classique.</p>
+                        <h2 style="margin-top: 2rem;">Notre philosophie</h2>
+                        <p>Inspirés par le dieu messager Hermès, notre maison incarne l'esprit de découverte et de transmission. Nos couleurs, un vert profond rappelant la nature et l'inconnu, et un vert plus clair incarnant la sérénité et la réflexion, forment une palette élégante dépeignant la découverte, le respect du monde et la dimension intérieure du voyage.</p>
+                        <p>Notre collection Quatuor illustre cette vision : des recueils de quatre nouvelles d'auteurs classiques, choisies pour explorer un même thème sous différents angles et à travers diverses époques. Un format semi-poche d'environ 200 pages, une reliure en toile sophistiquée, et une fabrication soignée qui donne envie de commencer sa bibliothèque du voyageur.</p>
                         <h2 style="margin-top: 2rem;">Diffusion et distribution</h2>
                         <p>Nos ouvrages sont diffusés et distribués par <strong>Serendip Livres</strong> dans toute la francophonie (France, Belgique, Suisse, Luxembourg), garantissant ainsi une large accessibilité à nos publications.</p>
                     </div>
@@ -1198,7 +1227,9 @@
                             <p><strong>Prix :</strong> 19.50 €</p>
                         </div>
 
-                        <p>Ce premier volume de la collection Quatuor réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
+                        <button class="buy-button">Acheter le livre</button>
+
+                        <p style="margin-top: 2rem;">Ce premier volume de la collection Quatuor réunit quatre récits d'aventure captivants, signés par les plus grands noms de la littérature. Un voyage à travers le Mexique, le Grand Nord, des contrées fantastiques et les océans.</p>
                         
                         <div class="stories-list">
                             <div class="story-item">
