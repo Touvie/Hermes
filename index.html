@@ -287,48 +287,49 @@
         }
 
         /* La Maison */
+        .maison-banner {
+            text-align: center;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .maison-banner img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+        }
+
         .about-content {
+            margin-top: 3rem;
+        }
+
+        .maison-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
             margin-top: 2rem;
         }
 
-        .maison-header {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 3rem;
-            align-items: start;
-            margin-bottom: 2rem;
+        .maison-column {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(45, 74, 62, 0.1);
+            border-top: 4px solid #2d4a3e;
         }
 
-        .placeholder-img {
-            width: 100%;
-            height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            border-radius: 5%;
+        .maison-column h2 {
+            color: #2d4a3e;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
-        .placeholder-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .about-content p {
+        .maison-column p {
             margin-bottom: 1.2rem;
             text-align: justify;
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.7;
-        }
-
-        .about-content h2 {
-            margin-top: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .maison-header h2 {
-            margin-top: 0;
         }
 
         /* Catalogue */
@@ -936,6 +937,11 @@
                 gap: 1.5rem;
             }
 
+            .maison-columns {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
             .about-content p {
                 font-size: 0.9rem;
             }
@@ -1144,22 +1150,38 @@
             <img src="Images/Square.png" class="corner-decoration corner-bottom-right" alt="">
             <div class="container">
                 <h1>Notre Maison</h1>
+                
+                <div class="maison-banner">
+                    <img src="Images/Logo2.png" alt="Éditions d'Hermès">
+                </div>
+
                 <div class="about-content">
-                    <div class="maison-header">
-                        <div class="placeholder-img">
-                            <img src="Images/Logo2.png" alt="Maison d'édition">
-                        </div>
-                        <div>
+                    <div class="maison-columns">
+                        <div class="maison-column">
                             <h2>Notre histoire</h2>
-                            <p>Jeunes professionnels fraîchement diplômés de masters d'édition et d'univers journalistiques, nous avons choisi Bordeaux pour lancer notre activité. Après avoir étudié dans cette ville, nous avons réfléchi à ce que nous pourrions offrir au paysage éditorial bordelais. Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques.</p>
+                            <p>Jeunes professionnels fraîchement diplômés de masters d'édition et d'univers journalistiques, nous avons choisi Bordeaux pour lancer notre activité.</p>
+                            <p>Après avoir étudié dans cette ville, nous avons réfléchi à ce que nous pourrions offrir au paysage éditorial bordelais. Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques.</p>
+                            <p>Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture.</p>
+                        </div>
+
+                        <div class="maison-column">
+                            <h2>Notre philosophie</h2>
+                            <p>Inspirés par le dieu messager Hermès, notre maison incarne l'esprit de découverte et de transmission.</p>
+                            <p>Nos couleurs, un vert profond rappelant la nature et l'inconnu, et un vert plus clair incarnant la sérénité et la réflexion, forment une palette élégante dépeignant la découverte et le respect du monde.</p>
+                            <p>Notre collection Quatuor illustre cette vision : des recueils de quatre nouvelles d'auteurs classiques, choisies pour explorer un même thème sous différents angles et à travers diverses époques. Un format semi-poche, une reliure en toile sophistiquée avec effet dorure.</p>
+                        </div>
+
+                        <div class="maison-column">
+                            <h2>Diffusion</h2>
+                            <p>Nos ouvrages sont diffusés et distribués par <strong>Serendip Livres</strong> dans toute la francophonie.</p>
+                            <p><strong>Zones de diffusion :</strong><br>
+                            • France<br>
+                            • Belgique<br>
+                            • Suisse<br>
+                            • Luxembourg</p>
+                            <p>Cette couverture garantit une large accessibilité à nos publications et un accompagnement professionnel de nos ouvrages jusqu'aux lecteurs.</p>
                         </div>
                     </div>
-                    <p>Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité. Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture. Nous proposons des ouvrages au format hybride, ornés d'effet dorure et conçus dans un esprit résolument classique.</p>
-                    <h2>Notre philosophie</h2>
-                    <p>Inspirés par le dieu messager Hermès, notre maison incarne l'esprit de découverte et de transmission. Nos couleurs, un vert profond rappelant la nature et l'inconnu, et un vert plus clair incarnant la sérénité et la réflexion, forment une palette élégante dépeignant la découverte, le respect du monde et la dimension intérieure du voyage.</p>
-                    <p>Notre collection Quatuor illustre cette vision : des recueils de quatre nouvelles d'auteurs classiques, choisies pour explorer un même thème sous différents angles et à travers diverses époques. Un format semi-poche d'environ 200 pages, une reliure en toile sophistiquée, et une fabrication soignée qui donne envie de commencer sa bibliothèque du voyageur.</p>
-                    <h2>Diffusion et distribution</h2>
-                    <p>Nos ouvrages sont diffusés et distribués par <strong>Serendip Livres</strong> dans toute la francophonie (France, Belgique, Suisse, Luxembourg), garantissant ainsi une large accessibilité à nos publications.</p>
                 </div>
             </div>
         </section>
