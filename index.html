@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Éditions d'Hermès - Collection Quatuor</title>
+    <title>Éditions Hermès - Collection Quatuor</title>
     <style>
         * {
             margin: 0;
@@ -238,6 +238,17 @@
             margin-bottom: 1rem;
             color: #2d4a3e;
             text-align: left;
+        }
+
+        .carousel-text .slogan {
+            font-size: 1.5rem;
+            color: #2d4a3e;
+            font-style: italic;
+            margin-bottom: 1rem;
+            text-align: left;
+            font-family: 'Georgia', serif;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .carousel-text p {
@@ -828,6 +839,7 @@
             color: #f5f1ed;
             text-decoration: none;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .footer-section a:hover {
@@ -1139,7 +1151,7 @@
     <header id="main-header" class="theme-hermes">
         <div class="logo">
             <a data-page="accueil">
-                <img src="Images/Logo.png" alt="Éditions d'Hermès">
+                <img src="Images/Logo.png" alt="Éditions Hermès">
             </a>
         </div>
         <nav>
@@ -1168,8 +1180,8 @@
                 <div class="carousel-slide">
                     <div class="carousel-content">
                         <div class="carousel-text">
-                            <h1>Éditions d'Hermès</h1>
-                            <p>Maison d'édition de beaux livres</p>
+                            <h1>Éditions Hermès</h1>
+                            <p class="slogan">Le voyage dans tous ses horizons</p>
                             <p>Découvrez notre collection Quatuor : des recueils de nouvelles classiques dans un écrin raffiné</p>
                             <p class="tagline">Allier esthétisme et praticité</p>
                         </div>
@@ -1181,7 +1193,7 @@
             </div>
             <div class="accueil-info">
                 <div class="container">
-                    <h2>Bienvenue aux Éditions d'Hermès</h2>
+                    <h2>Bienvenue aux Éditions Hermès</h2>
                     <p>Jeunes éditeurs bordelais passionnés, nous invitons à la découverte et au voyage à travers les mots. Notre collection Quatuor réunit quatre nouvelles d'auteurs classiques autour d'une thématique commune, présentées dans un format élégant et raffiné : reliure en toile, effet dorure et papier crème. Chaque recueil explore un thème sous plusieurs angles et à travers diverses époques.</p>
                     <p style="margin-top: 1.5rem; font-weight: bold; font-size: 1.2rem;"><a data-page="aventure" style="color: #f5f1ed; text-decoration: underline; cursor: pointer;">Découvrez dès maintenant notre premier livre !</a></p>
                 </div>
@@ -1201,13 +1213,13 @@
 
                 <div class="about-content">
                     <div class="maison-logo-float">
-                        <img src="Images/Logo2.png" alt="Éditions d'Hermès">
+                        <img src="Images/Logo2.png" alt="Éditions Hermès">
                     </div>
 
                     <div class="about-text">
                         <p>Jeunes professionnels fraîchement diplômés de masters d'édition et d'univers journalistiques, nous avons choisi Bordeaux pour lancer notre activité. Après avoir étudié dans cette ville, nous avons réfléchi à ce que nous pourrions offrir au paysage éditorial bordelais.</p>
                         
-                        <p>Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques. Créée en juin 2025, les Éditions d'Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité.</p>
+                        <p>Notre challenge : créer une maison d'édition locale qui invite à la réflexion et au voyage à travers le temps et les époques. Créée en juin 2025, les Éditions Hermès se consacrent à la création de beaux livres alliant esthétisme et praticité.</p>
                         
                         <p>Notre ambition est de faire du livre un véritable objet d'art, tout en préservant le plaisir de la lecture. Nous proposons des ouvrages au format hybride, ornés d'effet dorure et conçus dans un esprit résolument classique.</p>
                     </div>
@@ -1268,7 +1280,7 @@
             <div class="container">
                 <h1>Nos Collections</h1>
                 <p class="collections-intro">
-                    Les Éditions d'Hermès proposent des collections thématiques soigneusement élaborées. Chaque collection réunit des œuvres choisies pour leur qualité littéraire et présentées dans un écrin raffiné.
+                    Les Éditions Hermès proposent des collections thématiques soigneusement élaborées. Chaque collection réunit des œuvres choisies pour leur qualité littéraire et présentées dans un écrin raffiné.
                 </p>
                 <div class="collections-container">
                     <div class="collection-box quatuor" data-collection="aventure">
@@ -1402,11 +1414,11 @@
     <footer id="main-footer" class="theme-hermes">
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Éditions d'Hermès</h3>
-                <p>Maison d'édition de beaux livres</p>
+                <h3>Éditions Hermès</h3>
+                <p>Le voyage dans tous ses horizons</p>
                 <p>Bordeaux, France</p>
                 <div class="footer-logo">
-                    <img src="Images/Logo2.png" alt="Éditions d'Hermès">
+                    <img src="Images/Logo2.png" alt="Éditions Hermès">
                 </div>
             </div>
             <div class="footer-section">
@@ -1434,7 +1446,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Éditions d'Hermès. Tous droits réservés.</p>
+            <p>&copy; 2025 Éditions Hermès. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1545,7 +1557,12 @@
         // Easter egg pour le bouton "Acheter le livre"
         const buyButton = document.getElementById('buyBtn');
         if (buyButton) {
+            let errorActive = false;
+            
             buyButton.addEventListener('click', () => {
+                if (errorActive) return; // Empêche de re-cliquer pendant l'animation
+                
+                errorActive = true;
                 const originalText = buyButton.textContent;
                 
                 // Animation de glitch
@@ -1557,6 +1574,7 @@
                     buyButton.classList.remove('error');
                     buyButton.textContent = originalText;
                     buyButton.style.cursor = 'pointer';
+                    errorActive = false;
                 }, 5000);
             });
         }
